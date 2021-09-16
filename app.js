@@ -11,6 +11,10 @@ var userProfile;
  require('./auth')
  const session = require("express-session")
  const fetch = require('node-fetch');
+ const axios = require('axios');
+
+
+ const api = "http://9506-122-179-97-105.ngrok.io";
 
 // console.log(process.env)
 //  testing from git pod
@@ -75,6 +79,14 @@ app.use((req, res, next) => {
   next();
 
 
+})
+
+app.get('/api' , (req,res) => {
+axios.get(api)
+.then(function(response){
+  console.log(response.data.use)
+})
+  
 })
 
 
