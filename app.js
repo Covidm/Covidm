@@ -15,6 +15,7 @@ var userProfile;
 const { response } = require('express');
 
 // ngrok change when run
+const url = `http://6bde-122-179-60-232.ngrok.io`;
 
 // console.log(process.env)
 //  testing from git pod
@@ -82,7 +83,10 @@ app.use((req, res, next) => {
 })
 
 app.get('/api' , (req,res) => {
-  console.log("TEST")
+  axios.get(api)
+  .then(function (response){
+    res.send(response)
+  })
 })
 
 
