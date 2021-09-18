@@ -4,37 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+
     <title>Covidm</title>
 </head>
 <body>
-    <h1>Search!</h1>
 
-    <p>
-        Search:
-        <input id="search" value="london"></input>
-        <br/>
-        <button id="submit">submit</button>
-    </p>
+  <nav class="navbar navbar-light sticky-top ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/user">Covidm</a>
+      <a class="navbar-brand" href="user/logout"> <button class="btn btn-outline-primary">
+          logout
+      </button> 
+      </a>
+<!-- <a class="navbar-brand" href="/about-us"><button>Covid-19 precautions</button></a> -->
+    </div>
+  </nav>
+
+
+<h1>India Cases</h1>
+  <h3><%=cases%></h3>
+
     
 </body>
 
-<!-- testing -->
-
-<script>
-    var myHeaders = new Headers();
-myHeaders.append("Cookie", "connect.sid=s%3AQthSax3GQZwhaDJ1sYqYOhuzmxfW3xwM.1LEsoCBvnqCcj4dn0kcaCjCTHVcxKJduhVi2KePI5tg");
-
-var requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-  redirect: 'follow'
-};
-
-fetch("http://bf95-122-172-184-147.ngrok.io/list", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-</script>
-
-
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
 </html>

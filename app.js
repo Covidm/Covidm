@@ -12,10 +12,20 @@ var userProfile;
  const session = require("express-session")
  const fetch = require('node-fetch');
  const axios = require('axios');
-const { response } = require('express');
+const cors = require('cors');
+const app = express();
+
+
+app.use(session({ secret: "cats" }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+
+
 
 // ngrok change when run
-const url = `http://6bde-122-179-60-232.ngrok.io`;
+// const url = `http://30c5-122-179-60-232.ngrok.io/case`;
 
 // console.log(process.env)
 //  testing from git pod
@@ -30,19 +40,16 @@ const url = `http://6bde-122-179-60-232.ngrok.io`;
  function sessiondestroy(req , res){
 
   successRedirect: '/logout'
-
  }
 
 
 //  passport and express innit
 
- const app = express();
-app.use(session({ secret: "cats" }));
-app.use(passport.initialize());
-app.use(passport.session());
 
 
-
+app.engine('html', require('ejs').renderFile);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
 
 // For google and ejs
 
@@ -75,19 +82,23 @@ app.set('view engine', 'ejs')
 
 // ROUTES
 
-app.use((req, res, next) => {
-  res.header({"Access-Control-Allow-Origin": "*"});
-  next();
+// Cors
 
 
-})
+// app.get('/test', (req,res) => {
+//   res.render('search/search' , {name: 'Udhay'});
+// });
 
-app.get('/api' , (req,res) => {
-  axios.get(api)
-  .then(function (response){
-    res.send(response)
+// indain cases
+
+app.get('/user/search' , (req,res) => {
+  axios.get("https://api-covidm.herokuapp.com/case")
+  .then(function(response){
+    const cases = response.data.todayCases
+    res.render('search/search' , {cases:cases})
   })
 })
+
 
 
 app.get('/list' , (req,res) => {
