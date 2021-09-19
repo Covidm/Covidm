@@ -95,7 +95,20 @@ app.get('/user/search' , (req,res) => {
   axios.get("https://api-covidm.herokuapp.com/case")
   .then(function(response){
     const cases = response.data.todayCases
-    res.render('search/search' , {cases:cases})
+    const updated = response.data.updated
+    const deaths = response.data.todayDeaths
+    const recoverd = response.data.todayRecovered
+    const active = response.data.active
+    res.render('search/search' , {
+      cases:cases,
+      updated:updated,
+      active:active,
+      deaths:deaths,
+      recoverd:recoverd
+      
+
+
+    })
   })
 })
 
