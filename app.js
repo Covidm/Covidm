@@ -112,6 +112,10 @@ app.get('/user/search' , (req,res) => {
 })
 
 
+app.get('/user/asia' , (req,res) =>{
+  res.render('asia/asia')
+})
+
 
 app.get('/list' , (req,res) => {
   fs.readFile('./views/data/testData.json' , 'utf8' , (err , data) =>{
