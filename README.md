@@ -36,8 +36,9 @@ Before Running the we kindly request you to read the [the contributing guidlines
 make sure you have node js installed with all the node modules by using this command `npm install` then to run the project use `npm start` or you can use `nodemon`(which refreshs everytime you write code and save it in your editor)
 
 
-- Oauth clients(Google, github) if you don't hav these then you might get errors when you start the project
-
+- Oauth clients(Google, github , linkdin) if you don't hav these then you might get errors when you start the project
+Please kindly set up the oauth and put your cred saved in a env file to know more 
+-[oauth](https://github.com/Covidm/Covidm/blob/master/blob/oauth-setup.md)
 
 **Other ways to get started**
 
