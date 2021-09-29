@@ -204,6 +204,15 @@ app.get('/user/search', isloggedIn , (req,res) => {
     res.write(data);
     return res.end();
   })
+
+})
+
+app.get('/user/search/asia-card', isloggedIn, (req,res) => {
+  fs.readFile('./views/asia-card/asia-card.ejs' , function(err, data){
+    res.writeHead(200, {'Context-Type': 'text/html'});
+    res.write(data)
+    return res.end();
+  })
 })
 
 
