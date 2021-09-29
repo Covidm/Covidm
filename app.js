@@ -13,6 +13,7 @@ var userProfile;
  const fetch = require('node-fetch');
  const axios = require('axios');
 const cors = require('cors');
+const { response } = require('express');
 const app = express();
 
 
@@ -111,6 +112,7 @@ app.get('/user/search' , (req,res) => {
   })
 })
 
+// Testing route
 
 app.get('/user/asia' , (req,res) =>{
   res.render('asia/asia')
@@ -207,12 +209,20 @@ app.get('/user/search', isloggedIn , (req,res) => {
 
 })
 
+// IMPORTANT API ROUTES
 app.get('/user/search/asia-card', isloggedIn, (req,res) => {
-  fs.readFile('./views/asia-card/asia-card.ejs' , function(err, data){
-    res.writeHead(200, {'Context-Type': 'text/html'});
-    res.write(data)
-    return res.end();
+  axios.get("https://api-covidm.herokuapp.com/case")
+  .then(function(ress){
+    const asia_cases = ress.data.todayCases
+    const asia_updated = ress.data.updated
+    const asia_eaths = ress.data.todayDeaths
+    const asia_recoverd = ress.data.todayRecovered
+    const asia_active = ress.data.active
+  res.render('asia-card/asia-card', {
+    asia_active:asia_active,
+
   })
+})
 })
 
 
