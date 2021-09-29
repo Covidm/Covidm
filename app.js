@@ -220,6 +220,10 @@ app.get('/user/search/asia-card', isloggedIn, (req,res) => {
     const asia_active = ress.data.active
   res.render('asia-card/asia-card', {
     asia_active:asia_active,
+    asia_recoverd: asia_recoverd,
+    asia_eaths: asia_eaths,
+    asia_cases: asia_cases,
+    asia_updated: asia_updated
 
   })
 })
