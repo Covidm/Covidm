@@ -154,7 +154,7 @@ app.get('/user' , isloggedIn,  (req , res) => {
 
 
   
-
+ 
     return res.end();
   });
 });
@@ -164,7 +164,7 @@ app.get('/user' , isloggedIn,  (req , res) => {
 app.get('/user/logout' , (req,res) => {
   req.logout();
   req.session.destroy();
-  fs.readFile('./views/home_page/home.ejs' , function(err,data){
+  fs.readFile('./views/logout/logout.ejs' , function(err,data){
     res.writeHead(200, {'Context-type': 'text/html'});
     res.write(data);
     return res.end();
