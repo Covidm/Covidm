@@ -218,12 +218,16 @@ app.get('/user/search/asia-card', isloggedIn, (req,res) => {
     const asia_eaths = ress.data.todayDeaths
     const asia_recoverd = ress.data.todayRecovered
     const asia_active = ress.data.active
+    const population = ress.data.population
+    const activeperonemillon = ress.data.activePerOneMillion
   res.render('asia-card/asia-card', {
     asia_active:asia_active,
     asia_recoverd: asia_recoverd,
     asia_eaths: asia_eaths,
     asia_cases: asia_cases,
-    asia_updated: asia_updated
+    asia_updated: asia_updated,
+    population : population,
+    activeperonemillon: activeperonemillon
 
   })
 })
