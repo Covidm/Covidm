@@ -210,8 +210,14 @@ app.get('/user/search', isloggedIn , (req,res) => {
 })
 
 // usa card
-app.get('/user/search/usa-card-info' , isloggedIn , (req,res) => {
-  res.render('usa-card/usa-card');
+app.get('/user/search/usa-card-info' , isloggedIn , (req,response) => {
+  axios.get("https://api-covidm.herokuapp.com/usa")
+  .then(function(res){
+    const usa_total = res.data.totalCases
+    response.render('usa-card/usa-card', {
+      usa_total:usa_total,
+    })
+  })
 })
 
 // IMPORTANT API ROUTES
