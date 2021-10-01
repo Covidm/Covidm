@@ -214,8 +214,13 @@ app.get('/user/search/usa-card-info' , isloggedIn , (req,response) => {
   axios.get("https://api-covidm.herokuapp.com/usa")
   .then(function(res){
     const usa_total = res.data.totalCases
+    const usa_deaths = res.data.totalDeaths
+    const usa_states_name= res.data.casesByState.name
+
     response.render('usa-card/usa-card', {
       usa_total:usa_total,
+      usa_deaths:usa_deaths,
+
     })
   })
 })
