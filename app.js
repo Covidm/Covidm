@@ -209,6 +209,11 @@ app.get('/user/search', isloggedIn , (req,res) => {
 
 })
 
+// usa card
+app.get('/user/search/usa-card-info' , isloggedIn , (req,res) => {
+  res.render('usa-card/usa-card');
+})
+
 // IMPORTANT API ROUTES
 app.get('/user/search/asia-card', isloggedIn, (req,res) => {
   axios.get("https://api-covidm.herokuapp.com/case")

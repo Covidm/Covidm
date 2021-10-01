@@ -8,6 +8,39 @@
     <link rel="stylesheet" href="css/asia-card.css">
     <!-- Using inline style -->
     <style>
+
+.wrapper {
+  height: 100vh;
+  /*This part is important for centering*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typing-demo {
+  width: 22ch;
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+  text-align: center;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+
         .main-heading{
             text-align: center;
         }
@@ -60,10 +93,15 @@
 <body>
     <nav class="navbar navbar-light sticky-top ">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/user">Asia-data</a>
+          <a class="navbar-brand" href="/user/search/asia-card">Asia-data</a>
           <a class="navbar-brand" href="user/logout"> <button class="btn btn-outline-primary">
               logout
           </button> 
+
+          <a class="navbar-brand" href="/user/search"> <button class="btn btn-outline-primary">
+            Back to browse
+        </button> 
+
           </a>
     <!-- <a class="navbar-brand" href="/about-us"><button>Covid-19 precautions</button></a> -->
         </div>
@@ -72,33 +110,33 @@
       
     <h1 class="main-heading">Asia Cases</h1>
 
-    <div class="Cases-area text-primary-lighter">
+    <div class="Cases-area text-primary-lighter ">
 
-    <h3 class="active-cases">
+    <h3 class="active-cases typing-demo">
         Active cases
         <%=asia_active%>
     </h3>
-    <h3 class="recoverd_cases">
+    <h3 class="recoverd_cases typing-demo">
         Recoverd cases
         <%=asia_recoverd%>
     </h3>
 
-    <h3 class="current-cases">
+    <h3 class="current-cases typing-demo">
         Current cases
         <%=asia_cases%>
     </h3>
 
-    <h3 class="updated-cases">
+    <h3 class="updated-cases typing-demo">
         Updated cases
         <%=asia_updated%>
     </h3>
 
-    <h3 class="population">
+    <h3 class="population typing-demo">
         Total population
         <%=population%>
     </h3>
 
-    <h3 class="permill">
+    <h3 class="permill typing-demo">
         Activeperonemillon test cases
         <%=activeperonemillon%>
     </h3>
