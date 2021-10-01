@@ -13,6 +13,52 @@
             padding-top:2rem;
         }
 
+        .usa_total{
+            text-align: center;
+            padding-top: 2.5rem;
+        }
+        .total_deaths{
+            text-align: center;
+
+            padding-top: 2.5rem;
+        }
+
+        .wrapper {
+  height: 100vh;
+  /*This part is important for centering*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typing-demo {
+  width: 85ch;
+  animation: typing 2s steps(40), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+  text-align: center;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+.text-primary-lighter {
+            background-color: #2b8ede;
+}
+
+
     </style>
 </head>
 <body>
@@ -29,23 +75,24 @@
 
       
 
-    <h1 class="main-heading">Usa Total cases</h1>
+    <div class="text-primary-lighter">
+        <h1 class="main-heading ">Usa Total cases</h1>
 
-    <h2>
-        Total cases:
-        <%=usa_total%>
-    </h2>
+        <h2 class="usa_total typing-demo">
+            Total cases:
+            <%=usa_total%>
+        </h2>
+    
+        <h2 class="total_deaths typing-demo">
+            Total deaths
+            <%=usa_deaths%>
+        </h2>
+    
+    
+    </div>
 
-    <h2>
-        Total deaths
-        <%=usa_deaths%>
-    </h2>
 
 
-    <button class="Disabled">
-        Beta fetures
-
-    </button>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
