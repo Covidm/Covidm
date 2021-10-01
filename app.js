@@ -93,7 +93,7 @@ app.set('view engine', 'ejs')
 
 // MAP FEATURE
 
-app.get('/user/search/map-beta-version-1' , (req,res) => {
+app.get('/user/search/map-beta-version-1' ,isloggedIn,  (req,res) => {
   res.render('map/map')
 })
 // indain cases
