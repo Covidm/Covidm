@@ -90,6 +90,12 @@ app.set('view engine', 'ejs')
 //   res.render('search/search' , {name: 'Udhay'});
 // });
 
+
+// MAP FEATURE
+
+app.get('/user/search/map-beta-version-1' , (req,res) => {
+  res.render('map/map')
+})
 // indain cases
 
 app.get('/user/search' , (req,res) => {

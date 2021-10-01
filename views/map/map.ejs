@@ -1,0 +1,37 @@
+<html>
+    <head>
+     <!-- Include the following MapmyIndia javascript code into your webpage -->
+     <script src="https://maps.mapmyindia.com/covid-places/showNearbyCovidPlacesOnMap.js?category=HSPTMT"></script>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    </head>
+    <body>
+
+
+        <nav class="navbar navbar-light sticky-top ">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/user">Covidm</a>
+              <a class="navbar-brand" href="/user/logout"> <button class="btn btn-outline-primary">
+                  logout
+              </button> 
+              </a>
+        <!-- <a class="navbar-brand" href="/about-us"><button>Covid-19 precautions</button></a> -->
+            </div>
+          </nav>
+
+
+        <h1>Search for Hospitals Near you</h1>
+    <!-- define the div into which the nearby COVID places widget from MapmyIndia needs to be loaded -->
+    <div id="nearby-covid-places-mapmyindia"></div>
+    <!-- call the following code AFTER the mapmyindia javascript file has loaded -->
+     <script type="text/javascript">
+          loadNearbyCovidCentresMapmyIndiaDiv(document.getElementById("nearby-covid-places-mapmyindia"));
+     </script>
+
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+
+    </html>
