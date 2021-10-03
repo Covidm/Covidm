@@ -118,6 +118,13 @@ app.get('/user/search' , (req,res) => {
   })
 })
 
+
+
+app.get('/user/search/aus-info-card' , (req,res)=> {
+  axios.get('"https://api-covidm.herokuapp.com/aus')
+  res.render('aus-info-card/aus-info-card')
+})
+
 // Testing route
 
 app.get('/user/asia' , (req,res) =>{
