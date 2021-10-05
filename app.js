@@ -121,8 +121,18 @@ app.get('/user/search' , (req,res) => {
 
 
 app.get('/user/search/aus-info-card' , (req,res)=> {
-  axios.get('"https://api-covidm.herokuapp.com/aus')
-  res.render('aus-info-card/aus-info-card')
+  axios.get('https://api-covidm.herokuapp.com/aus')
+  .then(function(output){
+    const aus_updated = output.data.updated
+    const aus_cases = output.data.cases
+
+    res.render('aus-info-card/aus-info-card', {
+      aus_updated:aus_updated,
+      aus_cases: aus_cases
+    })
+
+
+  })
 })
 
 // Testing route
