@@ -139,6 +139,10 @@ app.get('/user/search/aus-info-card' , (req,res)=> {
       aus_cases: aus_cases,
       aus_today_cases: aus_today_cases,
       aus_deaths: aus_deaths,
+      aus_recoverd: aus_recoverd,
+      aus_active: aus_active,
+      aus_critical: aus_critical,
+      aus_caseperonemill: aus_caseperonemill,
       
     })
 
