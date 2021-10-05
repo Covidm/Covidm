@@ -125,10 +125,21 @@ app.get('/user/search/aus-info-card' , (req,res)=> {
   .then(function(output){
     const aus_updated = output.data.updated
     const aus_cases = output.data.cases
+    const aus_today_cases = output.data.todayCases
+    const aus_deaths = output.data.todayDeaths
+    const aus_recoverd = output.data.todayRecovered
+    const aus_active = output.data.active
+    const aus_critical = output.data.critical 
+    const aus_caseperonemill = output.data.casesPerOneMillion
+
+
 
     res.render('aus-info-card/aus-info-card', {
       aus_updated:aus_updated,
-      aus_cases: aus_cases
+      aus_cases: aus_cases,
+      aus_today_cases: aus_today_cases,
+      aus_deaths: aus_deaths,
+      
     })
 
 
