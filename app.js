@@ -131,6 +131,7 @@ app.get('/user/search/aus-info-card' , (req,res)=> {
     const aus_active = output.data.active
     const aus_critical = output.data.critical 
     const aus_caseperonemill = output.data.casesPerOneMillion
+    const aus_population = output.data.population
 
 
 
@@ -143,7 +144,8 @@ app.get('/user/search/aus-info-card' , (req,res)=> {
       aus_active: aus_active,
       aus_critical: aus_critical,
       aus_caseperonemill: aus_caseperonemill,
-      
+      aus_population: aus_population
+
     })
 
 
