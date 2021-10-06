@@ -152,6 +152,27 @@ app.get('/user/search/aus-info-card' , (req,res)=> {
   })
 })
 
+app.get('/user/search/africa-info-cases' , isloggedIn , (req,res) => {
+  axios.get('https://api-covidm.herokuapp.com/africa')
+  .then(function(count){
+
+    const africa_updated =count.data.updated
+    const africaCases = count.data.cases 
+    const africatodayCases = count.data.todayCases
+    const africatodayDeaths = count.data.todayDeaths
+    const africaRecoverd = count.data.recoverd
+    const africaTodayrecoverd = count.data.todayRecovered
+    const africaActive = count.data.active
+    const africaCritical = count.data.critical
+    const africaCaseperonemill = count.data.casesPerOneMillion
+     
+
+    res.render('africa-data-info/africa-data')
+
+
+  })  
+})
+
 // Testing route
 
 app.get('/user/asia' , (req,res) =>{
