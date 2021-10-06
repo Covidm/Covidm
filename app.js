@@ -165,9 +165,23 @@ app.get('/user/search/africa-info-cases' , isloggedIn , (req,res) => {
     const africaActive = count.data.active
     const africaCritical = count.data.critical
     const africaCaseperonemill = count.data.casesPerOneMillion
-     
+    const population = count.data.population
 
-    res.render('africa-data-info/africa-data')
+
+    res.render('africa-data-info/africa-data' , {
+      africa_updated: africa_updated,
+      africaCases: africaCases,
+      africatodayCases: africatodayCases,
+      africatodayDeaths: africatodayDeaths,
+      africaRecoverd: africaRecoverd,
+      africaTodayrecoverd: africaTodayrecoverd,
+      africaActive: africaActive,
+      africaCritical: africaCritical,
+      africaCaseperonemill: africaCaseperonemill,
+      population: population
+      
+
+    })
 
 
   })  
